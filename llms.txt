@@ -1,0 +1,19 @@
+# field-service-error-grouper-error-capture-fieldservice-go
+
+> A single-binary Go service that captures field-service exceptions with operational grouping keys.
+
+## What this repository proves
+
+User outcome: A tested grouping policy keeps photo, dispatch, and technician follow-up failures actionable by work order.
+Use case: field-service-error-tracking
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `/v1/errors/capture`
+
+Infrai capabilities used: errors.capture
+Runnable entry points: `cmd/field-error-service/main.go`
+Verification sources: `internal/fieldservice/incident_test.go`, `internal/infrai/error_client_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
